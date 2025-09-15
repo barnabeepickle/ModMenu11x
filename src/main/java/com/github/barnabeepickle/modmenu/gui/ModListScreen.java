@@ -41,6 +41,7 @@ import net.minecraft.util.Util;
 public class ModListScreen extends Screen {
 	private static final Identifier FILTERS_BUTTON_LOCATION = new Identifier(ModMenu.MOD_ID, "textures/gui/filters_button.png");
 	private static final Identifier CONFIGURE_BUTTON_LOCATION = new Identifier(ModMenu.MOD_ID, "textures/gui/configure_button.png");
+	@SuppressWarnings("unused")
 	private static final Logger LOGGER = LogManager.getLogger();
 	private final String textTitle;
 	private TextFieldWidget searchBox;
@@ -80,6 +81,7 @@ public class ModListScreen extends Screen {
 		this.searchBox.tick();
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void init() {
 		Objects.requireNonNull(this.minecraft).keyboard.enableRepeatEvents(true);
