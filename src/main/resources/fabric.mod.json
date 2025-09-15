@@ -42,7 +42,8 @@
     "Pyrofab",
     "UpcraftLP",
     "swordglowsblue",
-    "legenden"
+    "legenden",
+    "barnabeepickle"
   ],
   "description": "A fixed up version of modmenu for older versions of Minecraft.",
   "mixins": [
