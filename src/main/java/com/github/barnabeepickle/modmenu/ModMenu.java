@@ -11,7 +11,7 @@ import com.github.barnabeepickle.modmenu.util.HardcodedUtil;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
-import net.fabricmc.loader.api.metadata.CustomValue;
+//import net.fabricmc.loader.api.metadata.CustomValue;
 import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.minecraft.client.gui.screen.Screen;
 
@@ -29,6 +29,7 @@ public class ModMenu implements ClientModInitializer {
 	public static final Set<String> PATCHWORK_FORGE_MODS = new HashSet<>();
 	public static final LinkedListMultimap<ModContainer, ModContainer> PARENT_MAP = LinkedListMultimap.create();
 	private static ImmutableMap<String, Function<Screen, ? extends Screen>> configScreenFactories = ImmutableMap.of();
+	@SuppressWarnings("unused")
 	private static int libraryCount = 0;
 
 	public static boolean hasFactory(String modid) {
