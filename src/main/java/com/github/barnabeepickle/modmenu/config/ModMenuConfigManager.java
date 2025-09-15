@@ -9,6 +9,7 @@ public class ModMenuConfigManager {
 	private static File file;
 	private static ModMenuConfig config;
 
+	@SuppressWarnings("deprecation")
 	private static void prepareBiomeConfigFile() {
 		if (file != null) {
 			return;
