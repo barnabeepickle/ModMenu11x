@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "modmenu",
-  "name": "Mod Menu",
+  "name": "Mod Menu 1.1x",
   "version": "$version",
   "environment": "client",
   "license": "MIT",
@@ -44,7 +44,7 @@
     "swordglowsblue",
     "legenden"
   ],
-  "description": "Adds a mod menu to view the list of mods you have installed.",
+  "description": "A fixed up version of modmenu for older versions of Minecraft.",
   "mixins": [
     "mixins.modmenu.json"
   ],
