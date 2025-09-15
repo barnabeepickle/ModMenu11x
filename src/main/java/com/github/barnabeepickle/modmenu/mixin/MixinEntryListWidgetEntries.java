@@ -7,6 +7,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import java.util.AbstractList;
 import java.util.List;
 
+@SuppressWarnings("rawtypes")
 @Mixin(targets = "net.minecraft.client.gui.widget.EntryListWidget$Entries")
 public abstract class MixinEntryListWidgetEntries extends AbstractList {
 
