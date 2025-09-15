@@ -1,7 +1,7 @@
-package io.github.prospector.modmenu.mixin;
+package com.github.barnabeepickle.modmenu.mixin;
 
-import io.github.prospector.modmenu.ModMenu;
-import io.github.prospector.modmenu.gui.ModMenuButtonWidget;
+import com.github.barnabeepickle.modmenu.ModMenu;
+import com.github.barnabeepickle.modmenu.gui.ModMenuButtonWidget;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.gui.widget.AbstractButtonWidget;

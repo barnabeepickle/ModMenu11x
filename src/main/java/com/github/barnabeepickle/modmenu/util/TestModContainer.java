@@ -1,4 +1,4 @@
-//package io.github.prospector.modmenu.util;
+//package com.github.barnabeepickle.modmenu.util;
 //
 //import com.google.gson.JsonElement;
 //import net.fabricmc.loader.api.FabricLoader;

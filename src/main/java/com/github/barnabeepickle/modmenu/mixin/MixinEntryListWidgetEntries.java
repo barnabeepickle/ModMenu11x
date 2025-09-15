@@ -1,4 +1,4 @@
-package io.github.prospector.modmenu.mixin;
+package com.github.barnabeepickle.modmenu.mixin;
 
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

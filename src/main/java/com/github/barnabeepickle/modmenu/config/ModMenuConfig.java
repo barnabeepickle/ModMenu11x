@@ -1,6 +1,6 @@
-package io.github.prospector.modmenu.config;
+package com.github.barnabeepickle.modmenu.config;
 
-import io.github.prospector.modmenu.util.HardcodedUtil;
+import com.github.barnabeepickle.modmenu.util.HardcodedUtil;
 import net.fabricmc.loader.api.ModContainer;
 
 import java.util.Comparator;

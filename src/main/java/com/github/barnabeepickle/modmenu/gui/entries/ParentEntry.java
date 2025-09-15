@@ -1,10 +1,10 @@
-package io.github.prospector.modmenu.gui.entries;
+package com.github.barnabeepickle.modmenu.gui.entries;
 
 import com.mojang.blaze3d.platform.GlStateManager;
-import io.github.prospector.modmenu.ModMenu;
-import io.github.prospector.modmenu.gui.ModListEntry;
-import io.github.prospector.modmenu.gui.ModListSearch;
-import io.github.prospector.modmenu.gui.ModListWidget;
+import com.github.barnabeepickle.modmenu.ModMenu;
+import com.github.barnabeepickle.modmenu.gui.ModListEntry;
+import com.github.barnabeepickle.modmenu.gui.ModListSearch;
+import com.github.barnabeepickle.modmenu.gui.ModListWidget;
 import net.fabricmc.loader.api.ModContainer;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawableHelper;

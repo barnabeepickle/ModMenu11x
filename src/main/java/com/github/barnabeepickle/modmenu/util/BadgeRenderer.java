@@ -1,7 +1,7 @@
-package io.github.prospector.modmenu.util;
+package com.github.barnabeepickle.modmenu.util;
 
-import io.github.prospector.modmenu.ModMenu;
-import io.github.prospector.modmenu.gui.ModListScreen;
+import com.github.barnabeepickle.modmenu.ModMenu;
+import com.github.barnabeepickle.modmenu.gui.ModListScreen;
 import net.fabricmc.loader.api.ModContainer;
 import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.minecraft.client.MinecraftClient;

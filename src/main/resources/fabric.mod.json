@@ -8,7 +8,7 @@
   "icon": "assets/modmenu/icon.png",
   "entrypoints": {
     "client": [
-      "io.github.prospector.modmenu.ModMenu"
+      "com.github.barnabeepickle.modmenu.ModMenu"
     ]
   },
   "contact": {

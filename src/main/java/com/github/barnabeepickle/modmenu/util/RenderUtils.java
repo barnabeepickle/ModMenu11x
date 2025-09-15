@@ -1,4 +1,4 @@
-package io.github.prospector.modmenu.util;
+package com.github.barnabeepickle.modmenu.util;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

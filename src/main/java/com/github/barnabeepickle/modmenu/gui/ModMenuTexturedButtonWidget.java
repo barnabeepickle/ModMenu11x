@@ -1,4 +1,4 @@
-package io.github.prospector.modmenu.gui;
+package com.github.barnabeepickle.modmenu.gui;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.MinecraftClient;

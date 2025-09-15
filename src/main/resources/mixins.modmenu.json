@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "io.github.prospector.modmenu.mixin",
+  "package": "com.github.barnabeepickle.modmenu.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
     "MixinEntryListWidgetEntries",

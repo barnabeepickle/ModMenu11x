@@ -1,7 +1,7 @@
-package io.github.prospector.modmenu.gui.entries;
+package com.github.barnabeepickle.modmenu.gui.entries;
 
-import io.github.prospector.modmenu.gui.ModListEntry;
-import io.github.prospector.modmenu.gui.ModListWidget;
+import com.github.barnabeepickle.modmenu.gui.ModListEntry;
+import com.github.barnabeepickle.modmenu.gui.ModListWidget;
 import net.fabricmc.loader.api.ModContainer;
 
 public class IndependentEntry extends ModListEntry {

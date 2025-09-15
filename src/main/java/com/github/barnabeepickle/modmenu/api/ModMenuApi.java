@@ -1,6 +1,6 @@
-package io.github.prospector.modmenu.api;
+package com.github.barnabeepickle.modmenu.api;
 
-import io.github.prospector.modmenu.ModMenu;
+import com.github.barnabeepickle.modmenu.ModMenu;
 import net.minecraft.client.gui.screen.Screen;
 
 import java.util.Optional;

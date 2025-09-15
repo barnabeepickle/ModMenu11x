@@ -1,6 +1,6 @@
-package io.github.prospector.modmenu.gui;
+package com.github.barnabeepickle.modmenu.gui;
 
-import io.github.prospector.modmenu.util.HardcodedUtil;
+import com.github.barnabeepickle.modmenu.util.HardcodedUtil;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.widget.EntryListWidget;

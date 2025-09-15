@@ -1,10 +1,10 @@
-package io.github.prospector.modmenu.gui;
+package com.github.barnabeepickle.modmenu.gui;
 
 import com.mojang.blaze3d.platform.GlStateManager;
-import io.github.prospector.modmenu.ModMenu;
-import io.github.prospector.modmenu.util.BadgeRenderer;
-import io.github.prospector.modmenu.util.HardcodedUtil;
-import io.github.prospector.modmenu.util.RenderUtils;
+import com.github.barnabeepickle.modmenu.ModMenu;
+import com.github.barnabeepickle.modmenu.util.BadgeRenderer;
+import com.github.barnabeepickle.modmenu.util.HardcodedUtil;
+import com.github.barnabeepickle.modmenu.util.RenderUtils;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 import net.fabricmc.loader.api.metadata.ModMetadata;
