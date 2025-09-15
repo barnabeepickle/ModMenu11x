@@ -306,7 +306,7 @@ public class ModListScreen extends Screen {
 		BufferBuilder buffer = tessellator.getBuffer();
 		Objects.requireNonNull(MinecraftClient.getInstance()).getTextureManager().bindTexture(DrawableHelper.BACKGROUND_LOCATION);
 		GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-		buffer.begin(7, VertexFormats.POSITION_COLOR); // changed from POSITION_UV_COLOR to POSITION_COLOR
+		buffer.begin(7, VertexFormats.POSITION_TEXTURE_COLOR);
 		buffer.vertex(x1, y2, 0.0D).texture(x1 / 32.0D, y2 / 32.0D).color(red, green, blue, endAlpha).next();
 		buffer.vertex(x2, y2, 0.0D).texture(x2 / 32.0D, y2 / 32.0D).color(red, green, blue, endAlpha).next();
 		buffer.vertex(x2, y1, 0.0D).texture(x2 / 32.0D, y1 / 32.0D).color(red, green, blue, startAlpha).next();
