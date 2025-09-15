@@ -1,34 +1,14 @@
-# ModMenu
-~~Hard to be more descriptive than that.~~ It enriches the standard Minecraft menu with an interface displaying a one-dimensional array of modifications
+# Mod Menu 1.1x
 
+A fork of Mod Menu for less supported versions of Minecraft.
 
+![Mod Menu](showcase_screenshot.png)
 
-A picture's worth 2 words
+## Current and Projected Version Support
 
-![](https://i.imgur.com/JKEatou.png "Mod Menu")
+- [x] 1.14.4
+- [ ] 1.14.2
 
-### Developers:
-- Mod Menu is on maven at: https://maven.fabricmc.net/io/github/prospector/modmenu/
-- The icon comes from the icon specified in your fabric.mod.json (as per the spec)
-- Clientside-only and API badges are defined as custom objects in your fabric.mod.json as such:
-```json
-"custom": {
-    "modmenu:api": true,
-    "modmenu:clientsideOnly": true
-}
-```
-- Mod parenting is used to display a mod as a child of another one. This is meant to be used for mods divided into different modules. The following element in a fabric.mod.json will define the mod as a child of the mod 'flamingo':
-```json
-"custom": {
-    "modmenu:parent": "flamingo"
-}
-```
-- ModMenuAPI
-    - To use the API, implement the ModMenuApi interface on a class and add that as an entry point of type "modmenu" in your fabric.mod.json as such:
-  ```json
-  "entrypoints": {
-	"modmenu": [ "com.example.mod.ExampleModMenuApiImpl" ]
-  }
-  ```
-    - Features
-        - Mods can provide a Screen factory to provide a custom config screen to open with the config button. Implement the `getConfigScreenFactory` method in your API implementation.
+## Developer Info
+
+Currently no changes have been made to the way that Mod Menu functions on supported versions.
