@@ -7,6 +7,7 @@ import net.minecraft.client.gui.DrawableHelper;
 
 public class ChildEntry extends ModListEntry {
 	private boolean bottomChild;
+	@SuppressWarnings("unused")
 	private ParentEntry parent;
 
 	public ChildEntry(ModContainer container, ParentEntry parent, ModListWidget list, boolean bottomChild) {
