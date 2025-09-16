@@ -17,7 +17,7 @@ import net.minecraft.client.render.Tessellator;
 import net.minecraft.client.render.VertexFormats;
 import net.minecraft.client.texture.NativeImageBackedTexture;
 import net.minecraft.client.util.NarratorManager;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -67,7 +67,7 @@ public class ModListWidget extends AlwaysSelectedEntryListWidget<ModListEntry> i
 		this.setSelected(entry);
 		if (entry != null) {
 			ModMetadata metadata = entry.getMetadata();
-			NarratorManager.INSTANCE.narrate(new TranslatableText("narrator.select", HardcodedUtil.formatFabricModuleName(metadata.getName())).getString());
+			NarratorManager.INSTANCE.narrate(new TranslatableComponent("narrator.select", HardcodedUtil.formatFabricModuleName(metadata.getName())).getString());
 		}
 	}
 
@@ -194,7 +194,7 @@ public class ModListWidget extends AlwaysSelectedEntryListWidget<ModListEntry> i
 	protected void renderList(int x, int y, int mouseX, int mouseY, float delta) {
 		int itemCount = this.getItemCount();
 		Tessellator tessellator_1 = Tessellator.getInstance();
-		BufferBuilder buffer = tessellator_1.getBuffer();
+		BufferBuilder buffer = tessellator_1.getBufferBuilder();
 
 		for (int index = 0; index < itemCount; ++index) {
 			int entryTop = this.getRowTop(index) + 2;
