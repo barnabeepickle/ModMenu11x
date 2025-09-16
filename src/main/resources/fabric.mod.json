@@ -12,8 +12,8 @@
     ]
   },
   "contact": {
-    "homepage": "https://minecraft.curseforge.com/projects/modmenu",
-    "issues": "https://github.com/Prospector/ModMenu/issues"
+    "homepage": "https://modrinth.com/mod/mod-menu-1.1x",
+    "issues": "https://github.com/barnabeepickle/ModMenu11x/issues"
   },
   "depends": {
     "fabric-resource-loader-v0": "*",
