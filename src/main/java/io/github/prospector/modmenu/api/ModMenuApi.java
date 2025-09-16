@@ -1,4 +1,4 @@
-package com.github.barnabeepickle.modmenu.api;
+package io.github.prospector.modmenu.api;
 
 import com.github.barnabeepickle.modmenu.ModMenu;
 import net.minecraft.client.gui.screen.Screen;
