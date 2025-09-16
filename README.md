@@ -1,14 +1,23 @@
-# Mod Menu 1.1x
+# Mod Menu
 
-A fork of Mod Menu for less supported versions of Minecraft.
+## About
 
-![Mod Menu](showcase_screenshot.png)
+A fork of [Mod Menu](https://modrinth.com/mod/modmenu) to try and maintain less supported versions of Minecraft, main 1.14.x as of now.
 
-## Current and Projected Version Support
+![modmenu](https://cdn.modrinth.com/data/cached_images/07d445a0291c16a6d08f05c4da064ca782ec4534.png)
+
+### Other Forks
+
+Similar forks of modmenu:<br/>
+
+- [Mod Menu Ornithe](https://modrinth.com/mod/modmenu-ornithe)
+- [Mod Menu Babric](https://modrinth.com/mod/modmenu-babric)
+
+### Current and Projected Version Support
 
 - [x] 1.14.4
 - [x] 1.14.2
 
-## Developer Info
+## Why
 
-Currently no changes have been made to the way that Mod Menu functions on supported versions.
+Well trying to mod Minecraft 1.14.2 I found that Mod Menu did not work correctly and since I was looking for a small project I decided try to back port it, in the process I started by getting 1.14.4 updated and releasing that first then releasing 1.14.2
