@@ -4,7 +4,7 @@ import com.github.barnabeepickle.modmenu.ModMenu;
 import com.github.barnabeepickle.modmenu.gui.ModMenuButtonWidget;
 
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.screen.TitleScreen;
+import net.minecraft.client.gui.screen.PauseScreen;
 import net.minecraft.client.gui.widget.AbstractButtonWidget;
 import net.minecraft.client.resource.language.I18n;
 import net.minecraft.network.chat.Component;
@@ -13,14 +13,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(TitleScreen.class)
+@Mixin(PauseScreen.class)
 public class MixinGameMenuScreen extends Screen {
 
 	public MixinGameMenuScreen(Component title) {
 		super(title);
 	}
 
-	@Inject(at = @At("RETURN"), method = "init()V", remap=false)
+	@Inject(at = @At("RETURN"), method = "init()V")
 	public void drawMenuButton(CallbackInfo info) {
 		addButton(new ModMenuButtonWidget(this.width / 2 - 102, this.height / 4 + 8 + 24 * 3, 204, 20, I18n.translate("modmenu.title") + " " + I18n.translate("modmenu.loaded", ModMenu.getFormattedModCount()), this), 5);
 	}
