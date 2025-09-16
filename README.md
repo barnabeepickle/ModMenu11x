@@ -7,7 +7,7 @@ A fork of Mod Menu for less supported versions of Minecraft.
 ## Current and Projected Version Support
 
 - [x] 1.14.4
-- [ ] 1.14.2
+- [x] 1.14.2
 
 ## Developer Info
 
