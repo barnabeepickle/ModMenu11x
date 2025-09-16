@@ -89,7 +89,7 @@ public class ModListEntry extends AlwaysSelectedEntryListWidget.Entry<ModListEnt
 				return cached;
 			}
 			try (InputStream inputStream = Files.newInputStream(path)) {
-				NativeImage image = NativeImage.read(Objects.requireNonNull(inputStream));
+				NativeImage image = NativeImage.fromInputStream(Objects.requireNonNull(inputStream));
 				Validate.validState(image.getHeight() == image.getWidth(), "Must be square icon");
 				NativeImageBackedTexture tex = new NativeImageBackedTexture(image);
 				this.list.cacheModIcon(path, tex);
