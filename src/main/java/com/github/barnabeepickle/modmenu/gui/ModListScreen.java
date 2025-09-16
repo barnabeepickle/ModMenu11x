@@ -34,9 +34,9 @@ import net.minecraft.client.render.BufferBuilder;
 import net.minecraft.client.render.Tessellator;
 import net.minecraft.client.render.VertexFormats;
 import net.minecraft.client.resource.language.I18n;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Util;
+import net.minecraft.util.SystemUtil;
 
 public class ModListScreen extends Screen {
 	private static final Identifier FILTERS_BUTTON_LOCATION = new Identifier(ModMenu.MOD_ID, "textures/gui/filters_button.png");
@@ -62,9 +62,9 @@ public class ModListScreen extends Screen {
 	public Set<String> showModChildren = new HashSet<>();
 
 	public ModListScreen(Screen previousGui) {
-		super(new TranslatableText("modmenu.title"));
+		super(new TranslatableComponent("modmenu.title"));
 		this.parent = previousGui;
-		this.textTitle = title.asFormattedString();
+		this.textTitle = title.getFormattedText();
 	}
 
 	@Override
@@ -132,7 +132,7 @@ public class ModListScreen extends Screen {
 			final ModMetadata metadata = Objects.requireNonNull(selected).getMetadata();
 			this.minecraft.openScreen(new ConfirmChatLinkScreen((bool) -> {
 				if (bool) {
-					Util.getOperatingSystem().open(metadata.getContact().get("homepage").get());
+					SystemUtil.getOperatingSystem().open(metadata.getContact().get("homepage").get());
 				}
 				this.minecraft.openScreen(this);
 			}, metadata.getContact().get("homepage").get(), true));
@@ -149,7 +149,7 @@ public class ModListScreen extends Screen {
 			final ModMetadata metadata = Objects.requireNonNull(selected).getMetadata();
 			this.minecraft.openScreen(new ConfirmChatLinkScreen((bool) -> {
 				if (bool) {
-					Util.getOperatingSystem().open(metadata.getContact().get("issues").get());
+					SystemUtil.getOperatingSystem().open(metadata.getContact().get("issues").get());
 				}
 				this.minecraft.openScreen(this);
 			}, metadata.getContact().get("issues").get(), true));
@@ -213,7 +213,7 @@ public class ModListScreen extends Screen {
 		this.addButton(websiteButton);
 		this.addButton(issuesButton);
 		this.children.add(this.descriptionListWidget);
-		this.addButton(new ButtonWidget(this.width / 2 - 154, this.height - 28, 150, 20, I18n.translate("modmenu.modsFolder"), button -> Util.getOperatingSystem().open(new File(FabricLoader.getInstance().getGameDirectory(), "mods"))));
+		this.addButton(new ButtonWidget(this.width / 2 - 154, this.height - 28, 150, 20, I18n.translate("modmenu.modsFolder"), button -> SystemUtil.getOperatingSystem().open(new File(FabricLoader.getInstance().getGameDirectory(), "mods"))));
 		this.addButton(new ButtonWidget(this.width / 2 + 4, this.height - 28, 150, 20, I18n.translate("gui.done"), button -> minecraft.openScreen(parent)));
 		this.setInitialFocus(this.searchBox);
 
@@ -303,10 +303,10 @@ public class ModListScreen extends Screen {
 
 	public static void overlayBackground(int x1, int y1, int x2, int y2, int red, int green, int blue, int startAlpha, int endAlpha) {
 		Tessellator tessellator = Tessellator.getInstance();
-		BufferBuilder buffer = tessellator.getBuffer();
+		BufferBuilder buffer = tessellator.getBufferBuilder();
 		Objects.requireNonNull(MinecraftClient.getInstance()).getTextureManager().bindTexture(DrawableHelper.BACKGROUND_LOCATION);
 		GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-		buffer.begin(7, VertexFormats.POSITION_TEXTURE_COLOR);
+		buffer.begin(7, VertexFormats.POSITION_UV_COLOR);
 		buffer.vertex(x1, y2, 0.0D).texture(x1 / 32.0D, y2 / 32.0D).color(red, green, blue, endAlpha).next();
 		buffer.vertex(x2, y2, 0.0D).texture(x2 / 32.0D, y2 / 32.0D).color(red, green, blue, endAlpha).next();
 		buffer.vertex(x2, y1, 0.0D).texture(x2 / 32.0D, y1 / 32.0D).color(red, green, blue, startAlpha).next();
