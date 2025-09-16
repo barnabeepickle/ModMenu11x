@@ -5,7 +5,9 @@ import com.google.common.collect.LinkedListMultimap;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.github.barnabeepickle.modmenu.api.ModMenuApi;
+
+import io.github.prospector.modmenu.api.ModMenuApi;
+
 import com.github.barnabeepickle.modmenu.config.ModMenuConfigManager;
 import com.github.barnabeepickle.modmenu.util.HardcodedUtil;
 import net.fabricmc.api.ClientModInitializer;
