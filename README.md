@@ -42,7 +42,7 @@ More information on `maven.modrinth` can be [found here.](https://support.modrin
 
 `build.gradle`
 
-```
+```json title="build.gradle"
 repositories {
     exclusiveContent {
             forRepository {
@@ -60,7 +60,7 @@ repositories {
 
 `build.gradle`
 
-```
+```json title="build.gradle"
 dependencies {
     modApi include("maven.modrinth:mod-menu-1.1x:ABC")
 }
