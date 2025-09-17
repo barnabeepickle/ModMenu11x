@@ -7,6 +7,7 @@ import com.github.barnabeepickle.modmenu.gui.entries.ChildEntry;
 import com.github.barnabeepickle.modmenu.gui.entries.IndependentEntry;
 import com.github.barnabeepickle.modmenu.gui.entries.ParentEntry;
 import com.github.barnabeepickle.modmenu.util.HardcodedUtil;
+import com.github.barnabeepickle.modmenu.util.ModListSearch;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 import net.fabricmc.loader.api.metadata.ModMetadata;
@@ -31,13 +32,13 @@ public class ModListWidget extends AlwaysSelectedEntryListWidget<ModListEntry> i
 	public static final boolean DEBUG = Boolean.getBoolean("modmenu.debug");
 
 	private final Map<Path, NativeImageBackedTexture> modIconsCache = new HashMap<>();
-	private final ModListScreen parent;
+	private final ModsScreen parent;
 	private List<ModContainer> modContainerList = null;
 	private Set<ModContainer> addedMods = new HashSet<>();
 	private String selectedModId = null;
 	private boolean scrolling;
 
-	public ModListWidget(MinecraftClient client, int width, int height, int y1, int y2, int entryHeight, String searchTerm, ModListWidget list, ModListScreen parent) {
+	public ModListWidget(MinecraftClient client, int width, int height, int y1, int y2, int entryHeight, String searchTerm, ModListWidget list, ModsScreen parent) {
 		super(client, width, height, y1, y2, entryHeight);
 		this.parent = parent;
 		if (list != null) {
@@ -134,41 +135,38 @@ public class ModListWidget extends AlwaysSelectedEntryListWidget<ModListEntry> i
 			this.modContainerList.sort(ModMenuConfigManager.getConfig().getSorting().getComparator());
 		}
 
+		@SuppressWarnings("unused")
 		boolean validSearch = ModListSearch.validSearchQuery(searchTerm);
-		List<ModContainer> matched = ModListSearch.search(searchTerm, modContainerList);
+		List<ModContainer> matched = ModListSearch.search(parent, searchTerm, modContainerList);
 
 		for (ModContainer container : matched) {
 			ModMetadata metadata = container.getMetadata();
 			String modId = metadata.getId();
 			boolean library = ModMenu.LIBRARY_MODS.contains(modId);
 
-			//Hide parent lib mods when not searching, and the config is set to hide
-			if(!validSearch && library && !ModMenuConfigManager.getConfig().showLibraries()){
+			//Hide parent lib mods when the config is set to hide
+			if (library && !ModMenuConfigManager.getConfig().showLibraries()) {
 				continue;
 			}
 
 			if (!ModMenu.PARENT_MAP.values().contains(container)) {
 				if (ModMenu.PARENT_MAP.keySet().contains(container)) {
-					//A parent mod with children
-
+					//Add parent mods when not searching
 					List<ModContainer> children = ModMenu.PARENT_MAP.get(container);
 					children.sort(ModMenuConfigManager.getConfig().getSorting().getComparator());
 					ParentEntry parent = new ParentEntry(container, children, this);
 					this.addEntry(parent);
-
-					//Add all the child mods when not searching
-					if (!validSearch && this.parent.showModChildren.contains(modId)) {
-						for (ModContainer child : children) {
-							this.addEntry(new ChildEntry(child, parent, this, children.indexOf(child) == children.size() - 1));
+					//Add children if they are meant to be shown
+					if (this.parent.showModChildren.contains(modId)) {
+						List<ModContainer> validChildren = ModListSearch.search(this.parent, searchTerm, children);
+						for (ModContainer child : validChildren) {
+							this.addEntry(new ChildEntry(child, parent, this, validChildren.indexOf(child) == validChildren.size() - 1));
 						}
 					}
 				} else {
 					//A mod with no children
 					this.addEntry(new IndependentEntry(container, this));
 				}
-			} else if(validSearch) {
-				//A child mod that came up when searching
-				this.addEntry(new IndependentEntry(container, this));
 			}
 		}
 
@@ -290,7 +288,7 @@ public class ModListWidget extends AlwaysSelectedEntryListWidget<ModListEntry> i
 		return this.top;
 	}
 
-	public ModListScreen getParent() {
+	public ModsScreen getParent() {
 		return parent;
 	}
 
@@ -301,6 +299,16 @@ public class ModListWidget extends AlwaysSelectedEntryListWidget<ModListEntry> i
 
 	public int getDisplayedCount() {
 		return children().size();
+	}
+
+	public int getDisplayedCountFor(Set<String> set) {
+		int count = 0;
+		for (ModListEntry c : children()) {
+			if (set.contains(c.getMetadata().getId())) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	@Override

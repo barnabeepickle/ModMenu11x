@@ -1,7 +1,7 @@
 package com.github.barnabeepickle.modmenu.util;
 
 import com.github.barnabeepickle.modmenu.ModMenu;
-import com.github.barnabeepickle.modmenu.gui.ModListScreen;
+import com.github.barnabeepickle.modmenu.gui.ModsScreen;
 import net.fabricmc.loader.api.ModContainer;
 import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.minecraft.client.MinecraftClient;
@@ -14,9 +14,9 @@ public class BadgeRenderer {
 	protected ModContainer container;
 	protected ModMetadata metadata;
 	protected MinecraftClient client;
-	protected final ModListScreen screen;
+	protected final ModsScreen screen;
 
-	public BadgeRenderer(int startX, int startY, int endX, ModContainer container, ModListScreen screen) {
+	public BadgeRenderer(int startX, int startY, int endX, ModContainer container, ModsScreen screen) {
 		this.startX = startX;
 		this.startY = startY;
 		this.badgeMax = endX;
