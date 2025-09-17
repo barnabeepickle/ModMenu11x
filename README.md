@@ -2,7 +2,7 @@
 
 ## About
 
-A fork of [Mod Menu](https://modrinth.com/mod/modmenu) to try and maintain less supported versions of Minecraft, main 1.14.x as of now.
+A fork of [Mod Menu](https://modrinth.com/mod/modmenu) to try and maintain less supported versions of Minecraft, mainly 1.14.x as of now.
 
 ![modmenu](showcase_screenshot.png)
 
