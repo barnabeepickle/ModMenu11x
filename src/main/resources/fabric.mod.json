@@ -13,6 +13,7 @@
   },
   "contact": {
     "homepage": "https://modrinth.com/mod/mod-menu-1.1x",
+    "sources": "https://github.com/barnabeepickle/ModMenu11x",
     "issues": "https://github.com/barnabeepickle/ModMenu11x/issues"
   },
   "depends": {
