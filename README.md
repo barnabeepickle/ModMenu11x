@@ -30,7 +30,7 @@ Most other development info is the same from normal Mod Menu with the exception 
 
 Example imports:
 
-```
+```java
 import io.github.prospector.modmenu.api.ModMenuApi;
 import io.github.prospector.modmenu.api.ConfigScreenFactory;
 ```
@@ -42,7 +42,7 @@ More information on `maven.modrinth` can be [found here.](https://support.modrin
 
 `build.gradle`
 
-```json title="build.gradle"
+```groovy title="build.gradle"
 repositories {
     exclusiveContent {
             forRepository {
@@ -60,7 +60,7 @@ repositories {
 
 `build.gradle`
 
-```json title="build.gradle"
+```groovy title="build.gradle"
 dependencies {
     modApi include("maven.modrinth:mod-menu-1.1x:ABC")
 }
